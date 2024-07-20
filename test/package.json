@@ -1,0 +1,20 @@
+{
+  "name": "test",
+  "version": "1.0.0",
+  "main": "index.js",
+  "scripts": {
+    "start": "node index.js",
+    "migrate:up": "migration-tool -d up",
+    "migrate:down": "migration-tool -d down"
+  },
+  "author": "",
+  "license": "ISC",
+  "description": "",
+  "dependencies": {
+    "glob": "^11.0.0",
+    "migration-tool": "file:.."
+  },
+  "devDependencies": {
+    "typescript": "^5.5.3"
+  }
+}

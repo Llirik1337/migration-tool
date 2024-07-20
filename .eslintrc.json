@@ -24,21 +24,6 @@
     "prettier/prettier": "error",
     "arrow-body-style": "off",
     "prefer-arrow-callback": "off",
-    "@typescript-eslint/lines-around-comment": [
-      "error",
-      {
-        "beforeBlockComment": true,
-        "afterBlockComment": true,
-        "beforeLineComment": true,
-        "afterLineComment": true,
-        "allowBlockStart": true,
-        "allowBlockEnd": true,
-        "allowObjectStart": true,
-        "allowObjectEnd": true,
-        "allowArrayStart": true,
-        "allowArrayEnd": true
-      }
-    ],
     "@typescript-eslint/quotes": ["error", "backtick"],
     "@typescript-eslint/no-mixed-enums": "error"
   },

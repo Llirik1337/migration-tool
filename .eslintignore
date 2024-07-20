@@ -5,3 +5,5 @@ package-lock.json
 tsconfig.json
 tsconfig.build.json
 .eslintrc.json
+bin.ts
+jest.config.ts
