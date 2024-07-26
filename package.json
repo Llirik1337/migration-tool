@@ -11,9 +11,6 @@
     "format": "prettier --write \"**/*.ts\"",
     "prepare": "husky install"
   },
-  "bin": {
-    "migration-tool": "./dist/bin.js"
-  },
   "lint-staged": {
     "**/*.{js,ts,json}": [
       "eslint . --fix",
@@ -24,8 +21,7 @@
   "license": "MIT",
   "dependencies": {
     "commander": "^12.1.0",
-    "mongodb": "^6.8.0",
-    "ts-node": "^10.9.2"
+    "mongodb": "^6.8.0"
   },
   "devDependencies": {
     "@faker-js/faker": "^8.4.1",

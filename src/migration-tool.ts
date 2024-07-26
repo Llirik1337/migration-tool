@@ -1,7 +1,14 @@
 import { type FileResolver } from './resolvers';
 import { type State } from './states';
+import { program } from 'commander';
+import path from 'path';
 
 export type MigrationFunction = (context?: unknown) => Promise<void> | void;
+
+export enum DIRECTION {
+  UP = `up`,
+  DOWN = `down`,
+}
 
 export interface Migration {
   fileName: string;
@@ -64,6 +71,25 @@ export class MigrationTool {
       }
     } finally {
       await state.close?.();
+    }
+  }
+
+  static async run(config: MigrationToolOptions): Promise<void> {
+    program.option(`-d, --direction <up|down>`, `up or down`, `up`).parse();
+
+    const options: { config: string; direction: string; typescript: boolean } =
+      program.opts();
+
+    const migrationTool = new MigrationTool(config);
+
+    // eslint-disable-next-line @typescript-eslint/no-unsafe-enum-comparison
+    if (options.direction === DIRECTION.UP) {
+      await migrationTool.up();
+      // eslint-disable-next-line @typescript-eslint/no-unsafe-enum-comparison
+    } else if (options.direction === DIRECTION.DOWN) {
+      await migrationTool.down();
+    } else {
+      throw new Error(`Unknown direction: ${options.direction}`);
     }
   }
 }

@@ -4,15 +4,17 @@
   "main": "index.js",
   "scripts": {
     "start": "node index.js",
-    "migrate:up": "migration-tool -d up",
-    "migrate:down": "migration-tool -d down"
+    "migrate": "node -r ts-node/register ./migrate.js",
+    "migrate:up": "npm run migrate -- -d up",
+    "migrate:down": "npm run migrate -- -d down"
   },
   "author": "",
   "license": "ISC",
   "description": "",
   "dependencies": {
     "glob": "^11.0.0",
-    "migration-tool": "file:.."
+    "migration-tool": "file:..",
+    "ts-node": "^10.9.2"
   },
   "devDependencies": {
     "typescript": "^5.5.3"

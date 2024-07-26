@@ -8,7 +8,7 @@ export interface TypescirptMigrationFile {
 }
 
 // eslint-disable-next-line @typescript-eslint/require-await
-export const typescriptResolver: FileResolver = (filePath: string) => {
+export const tsJsResolver: FileResolver = (filePath: string) => {
   // eslint-disable-next-line @typescript-eslint/no-var-requires
   const file = require(filePath) as TypescirptMigrationFile;
 
